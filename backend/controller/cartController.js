@@ -45,5 +45,5 @@ export const getCart = async (req, res) => {
     return res.json({ success: true, cartData });
   } catch (error) {
     return res.json({ success: false, message: "Error" });
-  }
+  } 
 };

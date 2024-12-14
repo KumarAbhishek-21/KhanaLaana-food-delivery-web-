@@ -6,7 +6,7 @@ import { StoreContext } from '../Context/StoreContext';
 function FoodItem({id, price, image, name, description }) {
 
    
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+    const {cartItems, addToCart, removeFromCart,url} = useContext(StoreContext);
 
   return (
     <div className='food-item'>
@@ -29,7 +29,7 @@ function FoodItem({id, price, image, name, description }) {
             </div>
             <p className='food-item-desc'>{description}</p>
             <p className="food-item-price">
-                ${price}
+                {price}
             </p>
         </div>
       

@@ -3,7 +3,8 @@ import "./add.css";
 import { assets } from "../../assets/admin_assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
-export default function Add({ url }) {
+export default function Add({url}) {
+  
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -11,7 +12,7 @@ export default function Add({ url }) {
     price: "",
     category: "salad",
   });
-
+  console.log(url);
   const onChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -101,7 +102,7 @@ export default function Add({ url }) {
               value={data.price}
               type="Number"
               name="price"
-              placeholder="$20"
+              placeholder="Rs."
             />
           </div>
         </div>

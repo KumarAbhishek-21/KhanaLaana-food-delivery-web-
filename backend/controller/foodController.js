@@ -5,23 +5,25 @@ import fs from "fs";
 
 export const addFood = async (req, res) => {
   let image_filename = `${req.file.filename}`;
+
   const food = new foodModel({
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    image: image_filename,
-  });
+    image: image_filename
+  })
   try {
     await food.save();
-    return res.json({ success: true, message: "Food Added" });
+     res.json({ success: true, message: "Food Added" });
   } catch (error) {
     console.log(error);
-    return res.json({ success: false, message: "Error" });
+    res.json({ success: false, message: "Error" });
   }
-};
+}
+// export {addFood}
 
-//all food list
+// all food list
 export const listFood = async (req, res) => {
   try {
     const foods = await foodModel.find({});

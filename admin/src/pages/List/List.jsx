@@ -17,6 +17,8 @@ export default function List({ url }) {
 
   const fetchList = async () => {
     const response = await axios.get(`${url}/api/food/list`);
+    // console.log(response.data );
+    
     if (response.data.success) {
       console.log(response.data);
       setList(response.data.data);

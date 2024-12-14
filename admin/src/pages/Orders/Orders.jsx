@@ -8,7 +8,8 @@ import { assets } from "../../assets/admin_assets/assets";
 
 export default function Orders({ url }) {
   const [orders, setOrders] = useState([]);
-
+  
+  
   const fetchAllOrders = async () => {
     const response = await axios(url + "/api/order/list");
     if (response.data.success) {
